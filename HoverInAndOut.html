@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hover InOut</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+var sourceSwap = function () {
+        var $this = $(this);
+        var newSource = $this.data('alt-src');
+        $this.data('alt-src', $this.attr('src'));
+        $this.attr('src', newSource);
+    }
+
+    $(function() {
+        $('img[data-alt-src]').each(function() { 
+            new Image().src = $(this).data('alt-src'); 
+        }).hover(sourceSwap, sourceSwap); 
+    });
+</script>
+<style> 
+    #panel, #flip {
+      padding: 5px;
+      text-align: center;
+      background-color: #e5eecc;
+      border: solid 1px #c3c3c3;
+    }
+    #container {
+        padding: 0px;
+    }
+
+    #im1 {
+        padding: 0px;
+        display: inline-block;
+    }
+    #im2 {
+        padding: 0px;
+        display: inline-block;
+    }
+    #im3 {
+        padding: 0px;
+        display: inline-block;
+    }
+    #im4 {
+        padding: 0px;
+        display: inline-block;
+    }
+    #container2 {
+        padding:0px;
+    }
+    #im5 {
+        padding: 0px;
+        display: inline-block;
+    }
+    #im6 {
+        padding: 0px;
+        display: inline-block;
+    }
+    #im7 {
+        padding: 0px;
+        display: inline-block;
+    }
+    #im8 {
+        padding: 0px;
+        display: inline-block;
+    }
+    
+    #panel {
+      padding: 50px;
+      display: none;
+    }
+</style>
+</head>
+<body>
+<div id = "container">
+    <div id="im1">
+        <img data-alt-src="top1.png" src="down1.png" width="59" height="86" >
+    </div>
+    <div id="im2">
+        <img data-alt-src="down1.png" src="left1.png" width="59" height="86" >
+    </div>
+    <div id="im3">
+        <img data-alt-src="left1.png" src="right1.png" width="59" height="86" >
+    </div>
+    <div id="im4">
+        <img data-alt-src="right1.png" src="top1.png" width="59" height="86" >
+    </div>
+</div>
+<div id ="container2">
+    <div id="im5">
+        <img data-alt-src="top1.png" src="down1.png" width="59" height="86" >
+    </div>
+    <div id="im6">
+        <img data-alt-src="down1.png" src="left1.png" width="59" height="86" >
+    </div>
+    <div id="im7">
+        <img data-alt-src="left1.png" src="right1.png" width="59" height="86" >
+    </div>
+    <div id="im8">
+        <img data-alt-src="right1.png" src="top1.png" width="59" height="86" >
+    </div>
+</div>
+</body>
+</html>
